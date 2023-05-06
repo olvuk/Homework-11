@@ -1,4 +1,17 @@
 public class Main {
+    public static void checkOs(int number, int year) {
+        if (number == 0) {
+            if (year < 2015) {
+                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+            } else {
+                System.out.println("Установите версию приложения для iOS по ссылке");
+            }
+        } else if (year < 2015) {
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        } else {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        }
+    }
     public static void checkYear(int year) {
         if ((year % 4) != 0) {
             System.out.println(year + " год не является високосным");
@@ -9,6 +22,7 @@ public class Main {
         } else {
             System.out.println(year + " год является високосным");
         }
+
 }
     public static void main(String[] args) {
         task1();
@@ -24,7 +38,7 @@ public class Main {
     public static void task2() {
         System.out.println();
         System.out.println("Задача 2");
-
+        checkOs(1, 2016);
     }
 
     public static void task3() {
