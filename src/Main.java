@@ -1,4 +1,15 @@
 public class Main {
+    public static void checkDelivery(int deliveryDistance, int deliveryTime) {
+        if (deliveryDistance <= 20) {
+        System.out.println("Потребуется дней: " + deliveryTime + " суток");
+    } else if (deliveryDistance <= 60) {
+        System.out.println("Потребуется дней: " + (deliveryTime + 1) + " суток");
+    } else if (deliveryDistance <= 95) {
+        System.out.println("Потребуется дней: " + (deliveryTime + 2) + " суток");
+    } else {
+            System.out.println("Доставки нет");
+        }
+    }
     public static void checkOs(int number, int year) {
         if (number == 0) {
             if (year < 2015) {
@@ -42,6 +53,8 @@ public class Main {
     }
 
     public static void task3() {
-
+        System.out.println();
+        System.out.println("Задача 3");
+        checkDelivery(110, 1);
     }
 }
