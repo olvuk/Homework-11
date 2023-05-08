@@ -1,15 +1,29 @@
 public class Main {
-    public static void checkDelivery(int deliveryDistance, int deliveryTime) {
-        if (deliveryDistance <= 20) {
-        System.out.println("Потребуется дней: " + deliveryTime + " суток");
-    } else if (deliveryDistance <= 60) {
-        System.out.println("Потребуется дней: " + (deliveryTime + 1) + " суток");
-    } else if (deliveryDistance <= 95) {
-        System.out.println("Потребуется дней: " + (deliveryTime + 2) + " суток");
-    } else {
+    public static void checkTime(int deliveryDistance) {
+        int deliveryTime = checkDelivery(deliveryDistance);
+        if (deliveryTime == -1) {
             System.out.println("Доставки нет");
+        } else if (deliveryTime == 1) {
+            System.out.println("Потребуется дней: " + deliveryTime);
+        } else if (deliveryTime == 2) {
+            System.out.println("Потребуется дней: " + deliveryTime);
+        } else if (deliveryTime == 3) {
+            System.out.println("Потребуется дней: " + deliveryTime);
         }
     }
+
+    public static int checkDelivery(int deliveryDistance) {
+        if (deliveryDistance <= 20) {
+            return 1;
+        } else if (deliveryDistance <= 60) {
+            return 2;
+        } else if (deliveryDistance <= 95) {
+            return 3;
+        } else {
+            return -1;
+        }
+    }
+
     public static void checkOs(int number, int year) {
         if (number == 0) {
             if (year < 2015) {
@@ -23,6 +37,7 @@ public class Main {
             System.out.println("Установите версию приложения для Android по ссылке");
         }
     }
+
     public static void checkYear(int year) {
         if ((year % 4) != 0) {
             System.out.println(year + " год не является високосным");
@@ -34,7 +49,8 @@ public class Main {
             System.out.println(year + " год является високосным");
         }
 
-}
+    }
+
     public static void main(String[] args) {
         task1();
         task2();
@@ -55,6 +71,7 @@ public class Main {
     public static void task3() {
         System.out.println();
         System.out.println("Задача 3");
-        checkDelivery(110, 1);
+        checkTime(15);
     }
+
 }
